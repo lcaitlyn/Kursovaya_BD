@@ -15,274 +15,250 @@ namespace BuildingCompany
     public partial class Form1 : Form
     {
         // названия таблиц
-        private const String CONTRACT = "contract";
-        private const String CUSTOMER = "customer";
-        private const String OBJECT = "object";
-        private const String EMPLOYEE = "employee";
-        private const String BRIGADE = "brigade";
-        private const String POSITION = "position";
+        private const String CONTRACT = "company.contract";
+        private const String CUSTOMER = "company.customer";
+        private const String OBJECT = "company.object";
+        private const String EMPLOYEE = "company.employee";
+        private const String BRIGADE = "company.brigade";
+        private const String POSITION = "company.position";
 
-        // Соединение с MySql db
-        //private MySqlConnection mySqlConnection = new MySqlConnection();
-        
-        // 
         private Utils u;
         private MyDBC dBC;
 
-        // Инициализация
         public Form1()
         {
             InitializeComponent();
-            dBC = new MyDBC();
-            u = new Utils();
+            dBC = new MyDBC(this);
+            u = new Utils(dBC);
 
             showTables();
         }
 
         // Отобразить все таблицы
         public void showTables()
-        {/*
-            showTable(dataGridContract, CONTRACT);
-            showTable(dataGridCustomer, CUSTOMER);
-            showComboBox(CUSTOMER, customerComboBox, "name", "id");
-            showComboBox(CUSTOMER, customersIdComboBox, "id", "id");
-            showTable(dataGridObject, OBJECT);
-            showTable(dataGridEmployee, EMPLOYEE);
-            showTable(dataGridBrigade, BRIGADE);
-            showTable(dataGridPosition, POSITION);
-            showComboBox(POSITION, positionComboBox, "name", "id");*/
+        {
+            showTable(CONTRACT, dataGridContract);
+            
+            showTable(CUSTOMER, dataGridCustomer);
+            showComboBox(CUSTOMER, customerComboBox);
+            
+            showTable(OBJECT, dataGridObject);
+            showComboBox(BRIGADE, objectBrigadeIdComboBox);
+            showComboBox(OBJECT, objectNameComboBox);
+            
+            showTable(EMPLOYEE, dataGridEmployee);
+            showComboBox(EMPLOYEE, employeeNameComboBox);
+            showComboBox(BRIGADE, employeeBridageIdComboBox);
+            showComboBox(POSITION, employeePositionIdComboBox);
+
+            showTable(BRIGADE, dataGridBrigade);
+            showComboBox(BRIGADE, bridageComboBox);
+            showComboBox(EMPLOYEE, foremanNameComboBox, "name", "id", $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Бригадир'")}");
+            
+            showTable(POSITION, dataGridPosition);
+            showComboBox(POSITION, positionComboBox);
         }
 
         // Отобразить таблицу
-        public void showTable(DataGridView dataGridView, String name)
-        {/*
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter("select * from company." + name, mySqlConnection);
+        public void showTable(String table, DataGridView dataGridView)
+        {
+            var dataAdapter = dBC.executeAdapterQuery($"SELECT * FROM {table}");
 
             DataSet dataSet = new DataSet();
-
             dataAdapter.Fill(dataSet);
-
-            dataGridView.DataSource = dataSet.Tables[0];*/
+            dataGridView.DataSource = dataSet.Tables[0];
         }
 
         // Отображение ComboBox
-        private void showComboBox(String name, ComboBox comboBox, String displayMember, String valueMember)
-        {/*
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter("select * from company." + name, mySqlConnection);
+        private void showComboBox(String table, ComboBox comboBox, String displayMember = "name", String valueMember = "id", String where = "")
+        {
+            var dataAdapter = dBC.executeAdapterQuery($"SELECT * FROM {table} {where}");
 
             DataTable dataTable = new DataTable();
             dataAdapter.Fill(dataTable);
             comboBox.DataSource = dataTable;
             comboBox.DisplayMember = displayMember;
-            comboBox.ValueMember = valueMember;*/
+            comboBox.ValueMember = valueMember;
         }
-
-        // Добавление в таблицу по названию таблицы, колонкам и значениям
-        private void addToTable(string table, string column, string value)
-        {/*
-            try
-            {
-                MySqlCommand mySqlCommand = new MySqlCommand(
-                    "insert into company." + table + " (" + column + ") values (" + value + ")", mySqlConnection);
-
-                mySqlCommand.ExecuteNonQuery();
-            }
-            finally
-            {
-                showTables();
-            }*/
-        }
-        /*
-        // Функция заворачивает String в 'String' (wrapInSingleQuote)
-        public String wISQ(String str)
-        {
-            return "'" + str + "'";
-        }
-
-        // Функция создает Строку where
-        private String createWhere(ComboBox comboBox)
-        {
-            String where;
-            if (comboBox.SelectedValue != null)
-                where = "id=" + comboBox.SelectedValue.ToString();
-            else
-                where = "name='" + comboBox.Text.Trim(' ') + "'";
-
-            return where;
-        }
-
-
-
-        // Проверка на пустоту TextBox.Text
-        private bool checkTextBoxForNull(TextBox textBox)
-        {
-            if (String.IsNullOrEmpty(textBox.Text.Trim(' ')))
-            {
-                showError("Заполните " + textBox.Name);
-                return false;
-            }
-            return true;
-        }
-
-        // Проверка на пустоту ComboBox.Text
-        private bool checkTextBoxForNull(ComboBox comboBox)
-        {
-            if (String.IsNullOrEmpty(comboBox.Text.Trim(' ')))
-            {
-                showError("Заполните " + comboBox.Name);
-                return false;
-            }
-            return true;
-        }
-
-        // Вывести ошибку
-        private void showError(String message)
-        {
-            MessageBox.Show(message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }*/
-
-        // Удаление из таблицы по названию таблицы и аргументу
-        private void deleteFromTable(String table, String value)
-        {/*
-            try
-            {
-                MySqlCommand mySqlCommand = new MySqlCommand(
-                    "delete from company." + table + " where " + value, mySqlConnection);
-
-                mySqlCommand.ExecuteNonQuery();
-            }
-            finally
-            {
-                showTables();
-            }*/
-        }
-
-        // Обновление значений таблицы
-        private void updateTable(string table, string column, string value)
-        {/*
-            try
-            {
-                MySqlCommand mySqlCommand = new MySqlCommand(
-                    $"update company.{table} set {column} where {value}", mySqlConnection);
-
-                mySqlCommand.ExecuteNonQuery();
-            }
-            finally
-            {
-                showTables();
-            }*/
-        }
-
 
         // Добавление должности
         private void addPosition_Click(object sender, EventArgs e)
-        {/*
-            if (!u.checkTextBoxForNull(positionName) || !u.checkTextBoxForNull(positionSalary)) return;
+        {
+            if (u.checkTextForNull(positionName) || u.checkTextForNull(positionSalary) || !u.checkForParseText(positionSalary.Text)) return;
 
-            try
-            {
-                String name = positionName.Text.Trim(' ');
-                uint salary = uint.Parse(positionSalary.Text.Trim(' '));
+            String name = u.wISQ(positionName.Text.Trim(' '));
+            uint salary = uint.Parse(positionSalary.Text.Trim(' '));
 
-                addToTable(POSITION, "name, salary", $"{u.wISQ(name)}, {salary}");
-
-                showTables();
-            }
-            catch (FormatException)
-            {
-                u.showError("Попробуйте другое число!");
-            }
-            catch (MySqlException ex)
-            {
-                u.showError(ex.Message);
-            }*/
+            dBC.addToTable(POSITION, "name, salary", $"{name}, {salary}");
         }
         
         // Кнопка удаления Должности
         private void button2_Click(object sender, EventArgs e)
-        {/*
-            if (!checkTextBoxForNull(positionComboBox)) return;
+        {
+            if (u.checkTextForNull(positionComboBox)) return;
 
-            deleteFromTable(POSITION, createWhere(positionComboBox));*/
+            dBC.deleteFromTable(POSITION, u.createWhere(positionComboBox));
         }
 
         // Кнопка изменения должности
         private void button1_Click(object sender, EventArgs e)
-        {/*
-            if (!checkTextBoxForNull(positionComboBox)) return;
-            if (!checkTextBoxForNull(positionName) || !checkTextBoxForNull(positionSalary)) return;
+        {
+            if (u.checkTextForNull(positionComboBox)) return;
+            if (u.checkTextForNull(positionName) || u.checkTextForNull(positionSalary)) return;
 
-            try
-            {
-                String name = positionName.Text.Trim(' ');
-                uint salary = uint.Parse(positionSalary.Text.Trim(' '));
+            String name = positionName.Text.Trim(' ');
+            uint salary = uint.Parse(positionSalary.Text.Trim(' '));
 
-                updateTable(POSITION, String.Format("name='{0}', salary={1}", name, salary), createWhere(positionComboBox));
-
-                showTables();
-            }
-            catch (FormatException)
-            {
-                showError("Попробуйте другое число!");
-            }
-            catch (MySqlException ex)
-            {
-                showError(ex.Message);
-            }*/
+            dBC.updateTable(POSITION, $"name={name}, salary={salary}", u.createWhere(positionComboBox));
         }
 
         // Добавление Заказчика
         private void addCustomer_Click(object sender, EventArgs e)
-        {/*
-            if (!checkTextBoxForNull(customersNameTextBox) || !checkTextBoxForNull(customersPhoneTextBox) || !checkTextBoxForNull(customersEmailTextBox)) return;
+        {
+            if (u.checkTextForNull(customersNameTextBox) || u.checkTextForNull(customersPhoneTextBox) || u.checkTextForNull(customersEmailTextBox)) return;
 
-            try
-            {
-                String name = customersNameTextBox.Text.Trim(' ');
-                String phone = customersPhoneTextBox.Text.Trim(' ');
-                String email = customersEmailTextBox.Text.Trim(' ');
+            String name = customersNameTextBox.Text.Trim(' ');
+            String phone = customersPhoneTextBox.Text.Trim(' ');
+            String email = customersEmailTextBox.Text.Trim(' ');
 
-                addToTable(CUSTOMER, "name, phone, email", $"{wISQ(name)}, {wISQ(phone)}, { wISQ(name)}");
+            dBC.addToTable(CUSTOMER, "name, phone, email", $"{u.wISQ(name)}, {u.wISQ(phone)}, {u.wISQ(name)}");
+        }
 
-                showTables();
-            }
-            catch (MySqlException ex)
-            {
-                showError(ex.Message);
-            }*/
+        // Изменить Заказчика
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(customerComboBox)) return;
+            if (u.checkTextForNull(customersNameTextBox) || u.checkTextForNull(customersPhoneTextBox) || u.checkTextForNull(customersEmailTextBox)) return;
+
+            String name = u.wISQ(customersNameTextBox.Text.Trim(' '));
+            String phone = u.wISQ(customersPhoneTextBox.Text.Trim(' '));
+            String email = u.wISQ(customersEmailTextBox.Text.Trim(' '));
+
+            dBC.updateTable(CUSTOMER, $"name={name}, phone={phone}, email={email}", u.createWhere(customerComboBox));
         }
 
         // Удаления Заказчика
-        private void button2_Click_1(object sender, EventArgs e)
-        {/*
-            if (!checkTextBoxForNull(customerComboBox)) return;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(customerComboBox)) return;
 
-            deleteFromTable("position", createWhere(customerComboBox));*/
+            dBC.deleteFromTable(CUSTOMER, u.createWhere(customerComboBox));
         }
 
-        // Изменения Заказчика
-        private void button1_Click_1(object sender, EventArgs e)
-        {/*
-            if (!checkTextBoxForNull(positionComboBox)) return;
-            if (!checkTextBoxForNull(positionName) || !checkTextBoxForNull(positionSalary)) return;
+        // Добавление бригады
+        private void addBrigadeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(brigadeNameTextBox)) return;
 
-            try
-            {
-                String name = positionName.Text.Trim(' ');
-                uint salary = uint.Parse(positionSalary.Text.Trim(' '));
+            String column = "name";
+            String value = $"{u.wISQ(brigadeNameTextBox.Text.Trim(' '))}";
 
-                updateTable("position", String.Format("name='{0}', salary={1}", name, salary), where);
+            var tmp = u.getStringForSet(foremanNameComboBox, EMPLOYEE, null, "Такого Бригадира не существует!");
+            if (tmp != null)
+                column += ", foremanId";
+            value += tmp;
 
-                showTables();
-            }
-            catch (FormatException)
-            {
-                showError("Попробуйте другое число!");
-            }
-            catch (MySqlException ex)
-            {
-                showError(ex.Message);
-            }*/
+            dBC.addToTable(BRIGADE, column, value);
+        }
+
+        // Изменение Бригады
+        private void changeBrigadeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(bridageComboBox) || u.checkTextForNull(brigadeNameTextBox)) return;
+
+            String set = $"name={u.wISQ(brigadeNameTextBox.Text.Trim(' '))}";
+
+            set += u.getStringForSet(foremanNameComboBox, EMPLOYEE, "foremanId=", "Такого Бригадира не существует");
+
+            dBC.updateTable(BRIGADE, set, u.createWhere(bridageComboBox));
+        }
+
+        private void deleteBrigadeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(bridageComboBox)) return;
+
+            dBC.deleteFromTable(BRIGADE, u.createWhere(bridageComboBox));
+        }
+
+        // Добавление Рабочего
+        private void addEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(employeeNameTextBox) || u.checkTextForNull(employeePhoneTextBox)) return;
+
+            String column = "name, phone";
+            String value = $"{u.wISQ(employeeNameTextBox.Text.Trim(' '))}, {u.wISQ(employeePhoneTextBox.Text.Trim(' '))}";
+
+            var tmp = u.getStringForSet(employeeBridageIdComboBox, BRIGADE, null, "Такой Бригады не существует");
+            if (tmp != null)
+                column += ", brigadeId";
+            value += tmp;
+
+            tmp = u.getStringForSet(employeePositionIdComboBox, POSITION, null, "Такой Должности не существует");
+            if (tmp != null)
+                column += ", positionId";
+            value += tmp;
+
+            dBC.addToTable(EMPLOYEE, column, value);
+        }
+
+        // Изменение рабочего
+        private void changeEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(employeeNameTextBox) || u.checkTextForNull(employeePhoneTextBox)) return;
+            if (u.checkTextForNull(employeeNameComboBox)) return;
+
+            String set = $"name={u.wISQ(employeeNameTextBox.Text.Trim(' '))}, phone={u.wISQ(employeePhoneTextBox.Text.Trim(' '))}";
+
+            set += u.getStringForSet(employeeBridageIdComboBox, BRIGADE, "brigadeId=", "Такой Бригады не существует");
+            set += u.getStringForSet(employeePositionIdComboBox, POSITION, "positionId=", "Такой Должности не существует");
+
+            dBC.updateTable(EMPLOYEE, set, u.createWhere(employeeNameComboBox));
+        }
+
+        // Удаление рабочего
+        private void deleteEmployeeButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(employeeNameComboBox)) return;
+
+            dBC.deleteFromTable(EMPLOYEE, u.createWhere(employeeNameComboBox));
+        }
+
+        // Создание Объекта
+        private void addObjectButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(objectNameTextBox) || u.checkTextForNull(objectAddressTextBox)) return;
+
+            String column = "name, address, startDate, endDate";
+            String value = $"{u.wISQ(objectNameTextBox.Text.Trim(' '))}, {u.wISQ(objectAddressTextBox.Text.Trim(' '))}" +
+                $", {u.wISQ(objectStartDateTimePicker.Value.ToString("yyyy-MM-dd"))}, {u.wISQ(objectEndDateTimePicker.Value.ToString("yyyy-MM-dd"))}";
+
+            var tmp = u.getStringForSet(objectBrigadeIdComboBox, BRIGADE, null, "Такой Бригады не существует");
+            if (tmp != null)
+                column += ", brigadeId";
+            value += tmp;
+
+            dBC.addToTable(OBJECT, column, value);
+        }
+
+        // Изменение объекта
+        private void updateObjectButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(objectNameTextBox) || u.checkTextForNull(objectAddressTextBox)) return;
+            if (u.checkTextForNull(objectNameComboBox)) return;
+
+            String set = $"name={u.wISQ(objectNameTextBox.Text.Trim(' '))}, address={u.wISQ(objectAddressTextBox.Text.Trim(' '))}" +
+                $", startDate={u.wISQ(objectStartDateTimePicker.Value.ToString("yyyy-MM-dd"))}, endDate={u.wISQ(objectEndDateTimePicker.Value.ToString("yyyy-MM-dd"))}";
+
+            set += u.getStringForSet(objectBrigadeIdComboBox, BRIGADE, "brigadeId=", "Такой Бригады не существует");
+
+            dBC.updateTable(OBJECT, set, u.createWhere(objectNameComboBox));
+        }
+
+        private void deleteObjectButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(objectNameComboBox)) return;
+
+            dBC.deleteFromTable(OBJECT, u.createWhere(objectNameComboBox));
         }
     }
 }

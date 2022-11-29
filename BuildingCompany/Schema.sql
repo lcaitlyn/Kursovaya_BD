@@ -16,7 +16,7 @@ create table if not exists company.customer (
 
 create table if not exists company.brigade (
     id serial primary key ,
-    name text not null,
+    name text unique not null,
     foremanId int references company.position(id)
 );
 

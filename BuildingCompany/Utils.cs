@@ -10,50 +10,85 @@ namespace BuildingCompany
 {
     class Utils
     {
+        private MyDBC dBC;
+
+        public Utils() { }
+
+        public Utils(MyDBC dBC)
+        {
+            this.dBC = dBC;
+        }
+
         // Функция заворачивает String в 'String' (wrapInSingleQuote)
         public String wISQ(String str)
         {
-            return "'" + str + "'";
+            return $"'{str}'";
         }
 
         // Функция создает Строку where
         public String createWhere(ComboBox comboBox)
         {
-            String where;
             if (comboBox.SelectedValue != null)
-                where = "id=" + comboBox.SelectedValue.ToString();
+                return $"id={comboBox.SelectedValue}";
             else
-                where = "name='" + comboBox.Text.Trim(' ') + "'";
-
-            return where;
+                return $"name='{comboBox.Text.Trim(' ')}'";
         }
 
         // Проверка на пустоту TextBox.Text
-        public bool checkTextBoxForNull(TextBox textBox)
+        public bool checkTextForNull(TextBox textBox)
         {
-            if (String.IsNullOrEmpty(textBox.Text.Trim(' ')))
-            {
-                showError("Заполните " + textBox.Name);
-                return false;
-            }
-            return true;
+            if (String.IsNullOrEmpty(textBox.Text.Trim(' '))) showError("Заполните " + textBox.Name);
+            
+            return String.IsNullOrEmpty(textBox.Text.Trim(' '));
         }
 
         // Проверка на пустоту ComboBox.Text
-        public bool checkTextBoxForNull(ComboBox comboBox)
+        public bool checkTextForNull(ComboBox comboBox)
         {
-            if (String.IsNullOrEmpty(comboBox.Text.Trim(' ')))
+            if (String.IsNullOrEmpty(comboBox.Text.Trim(' '))) showError("Заполните " + comboBox.Name);
+            
+            return String.IsNullOrEmpty(comboBox.Text.Trim(' '));
+        }
+
+        public bool checkTextForNull(string what, string errorMessage)
+        {
+            if (what == null)
+                showError(errorMessage);
+
+            return what == null;
+        }
+
+        // Проверяет строку на валидность
+        public bool checkForParseText(string text)
+        {
+            try
             {
-                showError("Заполните " + comboBox.Name);
+                uint.Parse(text.Trim(' '));
+                return true;
+            }
+            catch (Exception)
+            {
+                showError("Попробуйте другое число!");
                 return false;
             }
-            return true;
         }
 
         // Вывести ошибку
         public void showError(String message)
         {
             MessageBox.Show(message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public string getStringForSet(ComboBox comboBox, string table, string set, string errorMessage)
+        {
+            string id = null;
+            if (comboBox != null && !String.IsNullOrEmpty(comboBox.Text))
+            {
+                id = dBC.selectFromTable("id", table, $"name={wISQ(comboBox.Text.Trim(' '))}");
+
+                checkTextForNull(id, errorMessage);
+            }
+            return (id != null) ? $", {set}{id}" : null;
         }
     }
 }
