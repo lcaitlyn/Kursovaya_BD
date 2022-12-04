@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,6 +91,13 @@ namespace BuildingCompany
                 checkTextForNull(id, errorMessage);
             }
             return (id != null) ? $", {set}{id}" : null;
+        }
+
+        public void showDataGrid(DataGridView dataGridView, MySqlDataAdapter dataAdapter)
+        {
+            DataSet dataSet = new DataSet();
+            dataAdapter.Fill(dataSet);
+            dataGridView.DataSource = dataSet.Tables[0];
         }
     }
 }

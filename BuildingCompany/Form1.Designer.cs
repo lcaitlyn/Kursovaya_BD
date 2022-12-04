@@ -33,6 +33,22 @@ namespace BuildingCompany
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.deleteContractButton = new System.Windows.Forms.Button();
+            this.contractNameComboBox = new System.Windows.Forms.ComboBox();
+            this.changeContractButton = new System.Windows.Forms.Button();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.contractObjectComboBox = new System.Windows.Forms.ComboBox();
+            this.contractCustomerComboBox = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.contractDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.contractSellerComboBox = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.addContractButton = new System.Windows.Forms.Button();
+            this.contractAmountTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.dataGridContract = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -49,8 +65,28 @@ namespace BuildingCompany
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridCustomer = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.deleteObjectButton = new System.Windows.Forms.Button();
+            this.objectNameComboBox = new System.Windows.Forms.ComboBox();
+            this.updateObjectButton = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.objectEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.objectStartDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.objectAddressTextBox = new System.Windows.Forms.TextBox();
+            this.objectBrigadeIdComboBox = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.addObjectButton = new System.Windows.Forms.Button();
+            this.objectNameTextBox = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.dataGridObject = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.deleteEmployeeButton = new System.Windows.Forms.Button();
+            this.employeeNameComboBox = new System.Windows.Forms.ComboBox();
+            this.changeEmployeeButton = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -86,53 +122,32 @@ namespace BuildingCompany
             this.positionName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridPosition = new System.Windows.Forms.DataGridView();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.deleteEmployeeButton = new System.Windows.Forms.Button();
-            this.employeeNameComboBox = new System.Windows.Forms.ComboBox();
-            this.changeEmployeeButton = new System.Windows.Forms.Button();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.objectAddressTextBox = new System.Windows.Forms.TextBox();
-            this.objectBrigadeIdComboBox = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.addObjectButton = new System.Windows.Forms.Button();
-            this.objectNameTextBox = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.objectStartDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.objectEndDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.deleteObjectButton = new System.Windows.Forms.Button();
-            this.objectNameComboBox = new System.Windows.Forms.ComboBox();
-            this.updateObjectButton = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.mainDataGridView = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
+            this.tabPage7.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridContract)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).BeginInit();
             this.tabPage3.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObject)).BeginInit();
             this.tabPage4.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).BeginInit();
             this.tabPage5.SuspendLayout();
@@ -143,11 +158,10 @@ namespace BuildingCompany
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPosition)).BeginInit();
-            this.panel8.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
-            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
+            this.panel13.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -167,6 +181,11 @@ namespace BuildingCompany
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.panel15);
+            this.tabPage7.Controls.Add(this.panel14);
+            this.tabPage7.Controls.Add(this.panel13);
+            this.tabPage7.Controls.Add(this.label23);
+            this.tabPage7.Controls.Add(this.mainDataGridView);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Size = new System.Drawing.Size(768, 400);
@@ -176,7 +195,6 @@ namespace BuildingCompany
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.panel12);
             this.tabPage1.Controls.Add(this.panel11);
             this.tabPage1.Controls.Add(this.dataGridContract);
@@ -187,6 +205,162 @@ namespace BuildingCompany
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Договора";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel12.Controls.Add(this.deleteContractButton);
+            this.panel12.Controls.Add(this.contractNameComboBox);
+            this.panel12.Controls.Add(this.changeContractButton);
+            this.panel12.Location = new System.Drawing.Point(467, 230);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(298, 167);
+            this.panel12.TabIndex = 11;
+            // 
+            // deleteContractButton
+            // 
+            this.deleteContractButton.Location = new System.Drawing.Point(63, 123);
+            this.deleteContractButton.Name = "deleteContractButton";
+            this.deleteContractButton.Size = new System.Drawing.Size(171, 40);
+            this.deleteContractButton.TabIndex = 5;
+            this.deleteContractButton.Text = "Удалить";
+            this.deleteContractButton.UseVisualStyleBackColor = true;
+            this.deleteContractButton.Click += new System.EventHandler(this.deleteContractButton_Click);
+            // 
+            // contractNameComboBox
+            // 
+            this.contractNameComboBox.FormattingEnabled = true;
+            this.contractNameComboBox.Location = new System.Drawing.Point(63, 19);
+            this.contractNameComboBox.Name = "contractNameComboBox";
+            this.contractNameComboBox.Size = new System.Drawing.Size(171, 21);
+            this.contractNameComboBox.TabIndex = 4;
+            // 
+            // changeContractButton
+            // 
+            this.changeContractButton.Location = new System.Drawing.Point(63, 77);
+            this.changeContractButton.Name = "changeContractButton";
+            this.changeContractButton.Size = new System.Drawing.Size(171, 40);
+            this.changeContractButton.TabIndex = 1;
+            this.changeContractButton.Text = "Изменить";
+            this.changeContractButton.UseVisualStyleBackColor = true;
+            this.changeContractButton.Click += new System.EventHandler(this.changeContractButton_Click);
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel11.Controls.Add(this.contractObjectComboBox);
+            this.panel11.Controls.Add(this.contractCustomerComboBox);
+            this.panel11.Controls.Add(this.label16);
+            this.panel11.Controls.Add(this.label17);
+            this.panel11.Controls.Add(this.contractDateTimePicker);
+            this.panel11.Controls.Add(this.label18);
+            this.panel11.Controls.Add(this.contractSellerComboBox);
+            this.panel11.Controls.Add(this.label19);
+            this.panel11.Controls.Add(this.addContractButton);
+            this.panel11.Controls.Add(this.contractAmountTextBox);
+            this.panel11.Controls.Add(this.label20);
+            this.panel11.Location = new System.Drawing.Point(3, 230);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(296, 167);
+            this.panel11.TabIndex = 10;
+            // 
+            // contractObjectComboBox
+            // 
+            this.contractObjectComboBox.FormattingEnabled = true;
+            this.contractObjectComboBox.Location = new System.Drawing.Point(115, 14);
+            this.contractObjectComboBox.Name = "contractObjectComboBox";
+            this.contractObjectComboBox.Size = new System.Drawing.Size(167, 21);
+            this.contractObjectComboBox.TabIndex = 15;
+            // 
+            // contractCustomerComboBox
+            // 
+            this.contractCustomerComboBox.FormattingEnabled = true;
+            this.contractCustomerComboBox.Location = new System.Drawing.Point(115, 39);
+            this.contractCustomerComboBox.Name = "contractCustomerComboBox";
+            this.contractCustomerComboBox.Size = new System.Drawing.Size(167, 21);
+            this.contractCustomerComboBox.TabIndex = 14;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(130, 96);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 20);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Сумма";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(10, 96);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(48, 20);
+            this.label17.TabIndex = 12;
+            this.label17.Text = "Дата";
+            // 
+            // contractDateTimePicker
+            // 
+            this.contractDateTimePicker.Location = new System.Drawing.Point(64, 96);
+            this.contractDateTimePicker.Name = "contractDateTimePicker";
+            this.contractDateTimePicker.Size = new System.Drawing.Size(60, 20);
+            this.contractDateTimePicker.TabIndex = 10;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(9, 67);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(86, 20);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "Продавец";
+            // 
+            // contractSellerComboBox
+            // 
+            this.contractSellerComboBox.FormattingEnabled = true;
+            this.contractSellerComboBox.Location = new System.Drawing.Point(115, 66);
+            this.contractSellerComboBox.Name = "contractSellerComboBox";
+            this.contractSellerComboBox.Size = new System.Drawing.Size(167, 21);
+            this.contractSellerComboBox.TabIndex = 6;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(10, 15);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(67, 20);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Объект";
+            // 
+            // addContractButton
+            // 
+            this.addContractButton.Location = new System.Drawing.Point(58, 123);
+            this.addContractButton.Name = "addContractButton";
+            this.addContractButton.Size = new System.Drawing.Size(171, 40);
+            this.addContractButton.TabIndex = 1;
+            this.addContractButton.Text = "Добавить";
+            this.addContractButton.UseVisualStyleBackColor = true;
+            this.addContractButton.Click += new System.EventHandler(this.addContractButton_Click);
+            // 
+            // contractAmountTextBox
+            // 
+            this.contractAmountTextBox.Location = new System.Drawing.Point(194, 96);
+            this.contractAmountTextBox.Name = "contractAmountTextBox";
+            this.contractAmountTextBox.Size = new System.Drawing.Size(88, 20);
+            this.contractAmountTextBox.TabIndex = 4;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(9, 40);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(100, 20);
+            this.label20.TabIndex = 5;
+            this.label20.Text = "Покупатель";
             // 
             // dataGridContract
             // 
@@ -350,6 +524,160 @@ namespace BuildingCompany
             this.tabPage3.Text = "Объекты";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel10.Controls.Add(this.deleteObjectButton);
+            this.panel10.Controls.Add(this.objectNameComboBox);
+            this.panel10.Controls.Add(this.updateObjectButton);
+            this.panel10.Location = new System.Drawing.Point(467, 230);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(298, 167);
+            this.panel10.TabIndex = 10;
+            // 
+            // deleteObjectButton
+            // 
+            this.deleteObjectButton.Location = new System.Drawing.Point(63, 123);
+            this.deleteObjectButton.Name = "deleteObjectButton";
+            this.deleteObjectButton.Size = new System.Drawing.Size(171, 40);
+            this.deleteObjectButton.TabIndex = 5;
+            this.deleteObjectButton.Text = "Удалить";
+            this.deleteObjectButton.UseVisualStyleBackColor = true;
+            this.deleteObjectButton.Click += new System.EventHandler(this.deleteObjectButton_Click);
+            // 
+            // objectNameComboBox
+            // 
+            this.objectNameComboBox.FormattingEnabled = true;
+            this.objectNameComboBox.Location = new System.Drawing.Point(63, 19);
+            this.objectNameComboBox.Name = "objectNameComboBox";
+            this.objectNameComboBox.Size = new System.Drawing.Size(171, 21);
+            this.objectNameComboBox.TabIndex = 4;
+            // 
+            // updateObjectButton
+            // 
+            this.updateObjectButton.Location = new System.Drawing.Point(63, 77);
+            this.updateObjectButton.Name = "updateObjectButton";
+            this.updateObjectButton.Size = new System.Drawing.Size(171, 40);
+            this.updateObjectButton.TabIndex = 1;
+            this.updateObjectButton.Text = "Изменить";
+            this.updateObjectButton.UseVisualStyleBackColor = true;
+            this.updateObjectButton.Click += new System.EventHandler(this.updateObjectButton_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel9.Controls.Add(this.label15);
+            this.panel9.Controls.Add(this.label11);
+            this.panel9.Controls.Add(this.objectEndDateTimePicker);
+            this.panel9.Controls.Add(this.objectStartDateTimePicker);
+            this.panel9.Controls.Add(this.label12);
+            this.panel9.Controls.Add(this.objectAddressTextBox);
+            this.panel9.Controls.Add(this.objectBrigadeIdComboBox);
+            this.panel9.Controls.Add(this.label13);
+            this.panel9.Controls.Add(this.addObjectButton);
+            this.panel9.Controls.Add(this.objectNameTextBox);
+            this.panel9.Controls.Add(this.label14);
+            this.panel9.Location = new System.Drawing.Point(3, 230);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(296, 167);
+            this.panel9.TabIndex = 9;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(148, 96);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 20);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Конец";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(19, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 20);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Старт";
+            // 
+            // objectEndDateTimePicker
+            // 
+            this.objectEndDateTimePicker.Location = new System.Drawing.Point(209, 96);
+            this.objectEndDateTimePicker.Name = "objectEndDateTimePicker";
+            this.objectEndDateTimePicker.Size = new System.Drawing.Size(62, 20);
+            this.objectEndDateTimePicker.TabIndex = 11;
+            // 
+            // objectStartDateTimePicker
+            // 
+            this.objectStartDateTimePicker.Location = new System.Drawing.Point(82, 96);
+            this.objectStartDateTimePicker.Name = "objectStartDateTimePicker";
+            this.objectStartDateTimePicker.Size = new System.Drawing.Size(60, 20);
+            this.objectStartDateTimePicker.TabIndex = 10;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(19, 70);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(74, 20);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Бригада";
+            // 
+            // objectAddressTextBox
+            // 
+            this.objectAddressTextBox.Location = new System.Drawing.Point(104, 43);
+            this.objectAddressTextBox.Name = "objectAddressTextBox";
+            this.objectAddressTextBox.Size = new System.Drawing.Size(167, 20);
+            this.objectAddressTextBox.TabIndex = 7;
+            // 
+            // objectBrigadeIdComboBox
+            // 
+            this.objectBrigadeIdComboBox.FormattingEnabled = true;
+            this.objectBrigadeIdComboBox.Location = new System.Drawing.Point(104, 69);
+            this.objectBrigadeIdComboBox.Name = "objectBrigadeIdComboBox";
+            this.objectBrigadeIdComboBox.Size = new System.Drawing.Size(167, 21);
+            this.objectBrigadeIdComboBox.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(10, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 20);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Название";
+            // 
+            // addObjectButton
+            // 
+            this.addObjectButton.Location = new System.Drawing.Point(58, 123);
+            this.addObjectButton.Name = "addObjectButton";
+            this.addObjectButton.Size = new System.Drawing.Size(171, 40);
+            this.addObjectButton.TabIndex = 1;
+            this.addObjectButton.Text = "Добавить";
+            this.addObjectButton.UseVisualStyleBackColor = true;
+            this.addObjectButton.Click += new System.EventHandler(this.addObjectButton_Click);
+            // 
+            // objectNameTextBox
+            // 
+            this.objectNameTextBox.Location = new System.Drawing.Point(104, 17);
+            this.objectNameTextBox.Name = "objectNameTextBox";
+            this.objectNameTextBox.Size = new System.Drawing.Size(167, 20);
+            this.objectNameTextBox.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(36, 43);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(57, 20);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "Адрес";
+            // 
             // dataGridObject
             // 
             this.dataGridObject.AllowUserToAddRows = false;
@@ -372,6 +700,45 @@ namespace BuildingCompany
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Рабочие";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel8.Controls.Add(this.deleteEmployeeButton);
+            this.panel8.Controls.Add(this.employeeNameComboBox);
+            this.panel8.Controls.Add(this.changeEmployeeButton);
+            this.panel8.Location = new System.Drawing.Point(467, 230);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(298, 167);
+            this.panel8.TabIndex = 9;
+            // 
+            // deleteEmployeeButton
+            // 
+            this.deleteEmployeeButton.Location = new System.Drawing.Point(63, 123);
+            this.deleteEmployeeButton.Name = "deleteEmployeeButton";
+            this.deleteEmployeeButton.Size = new System.Drawing.Size(171, 40);
+            this.deleteEmployeeButton.TabIndex = 5;
+            this.deleteEmployeeButton.Text = "Удалить";
+            this.deleteEmployeeButton.UseVisualStyleBackColor = true;
+            this.deleteEmployeeButton.Click += new System.EventHandler(this.deleteEmployeeButton_Click);
+            // 
+            // employeeNameComboBox
+            // 
+            this.employeeNameComboBox.FormattingEnabled = true;
+            this.employeeNameComboBox.Location = new System.Drawing.Point(63, 19);
+            this.employeeNameComboBox.Name = "employeeNameComboBox";
+            this.employeeNameComboBox.Size = new System.Drawing.Size(171, 21);
+            this.employeeNameComboBox.TabIndex = 4;
+            // 
+            // changeEmployeeButton
+            // 
+            this.changeEmployeeButton.Location = new System.Drawing.Point(63, 77);
+            this.changeEmployeeButton.Name = "changeEmployeeButton";
+            this.changeEmployeeButton.Size = new System.Drawing.Size(171, 40);
+            this.changeEmployeeButton.TabIndex = 1;
+            this.changeEmployeeButton.Text = "Изменить";
+            this.changeEmployeeButton.UseVisualStyleBackColor = true;
+            this.changeEmployeeButton.Click += new System.EventHandler(this.changeEmployeeButton_Click);
             // 
             // panel7
             // 
@@ -720,361 +1087,99 @@ namespace BuildingCompany
             this.dataGridPosition.Size = new System.Drawing.Size(762, 221);
             this.dataGridPosition.TabIndex = 0;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel8.Controls.Add(this.deleteEmployeeButton);
-            this.panel8.Controls.Add(this.employeeNameComboBox);
-            this.panel8.Controls.Add(this.changeEmployeeButton);
-            this.panel8.Location = new System.Drawing.Point(467, 230);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(298, 167);
-            this.panel8.TabIndex = 9;
-            // 
-            // deleteEmployeeButton
-            // 
-            this.deleteEmployeeButton.Location = new System.Drawing.Point(63, 123);
-            this.deleteEmployeeButton.Name = "deleteEmployeeButton";
-            this.deleteEmployeeButton.Size = new System.Drawing.Size(171, 40);
-            this.deleteEmployeeButton.TabIndex = 5;
-            this.deleteEmployeeButton.Text = "Удалить";
-            this.deleteEmployeeButton.UseVisualStyleBackColor = true;
-            this.deleteEmployeeButton.Click += new System.EventHandler(this.deleteEmployeeButton_Click);
-            // 
-            // employeeNameComboBox
-            // 
-            this.employeeNameComboBox.FormattingEnabled = true;
-            this.employeeNameComboBox.Location = new System.Drawing.Point(63, 19);
-            this.employeeNameComboBox.Name = "employeeNameComboBox";
-            this.employeeNameComboBox.Size = new System.Drawing.Size(171, 21);
-            this.employeeNameComboBox.TabIndex = 4;
-            // 
-            // changeEmployeeButton
-            // 
-            this.changeEmployeeButton.Location = new System.Drawing.Point(63, 77);
-            this.changeEmployeeButton.Name = "changeEmployeeButton";
-            this.changeEmployeeButton.Size = new System.Drawing.Size(171, 40);
-            this.changeEmployeeButton.TabIndex = 1;
-            this.changeEmployeeButton.Text = "Изменить";
-            this.changeEmployeeButton.UseVisualStyleBackColor = true;
-            this.changeEmployeeButton.Click += new System.EventHandler(this.changeEmployeeButton_Click);
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel9.Controls.Add(this.label15);
-            this.panel9.Controls.Add(this.label11);
-            this.panel9.Controls.Add(this.objectEndDateTimePicker);
-            this.panel9.Controls.Add(this.objectStartDateTimePicker);
-            this.panel9.Controls.Add(this.label12);
-            this.panel9.Controls.Add(this.objectAddressTextBox);
-            this.panel9.Controls.Add(this.objectBrigadeIdComboBox);
-            this.panel9.Controls.Add(this.label13);
-            this.panel9.Controls.Add(this.addObjectButton);
-            this.panel9.Controls.Add(this.objectNameTextBox);
-            this.panel9.Controls.Add(this.label14);
-            this.panel9.Location = new System.Drawing.Point(3, 230);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(296, 167);
-            this.panel9.TabIndex = 9;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 70);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(74, 20);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "Бригада";
-            // 
-            // objectAddressTextBox
-            // 
-            this.objectAddressTextBox.Location = new System.Drawing.Point(104, 43);
-            this.objectAddressTextBox.Name = "objectAddressTextBox";
-            this.objectAddressTextBox.Size = new System.Drawing.Size(167, 20);
-            this.objectAddressTextBox.TabIndex = 7;
-            // 
-            // objectBrigadeIdComboBox
-            // 
-            this.objectBrigadeIdComboBox.FormattingEnabled = true;
-            this.objectBrigadeIdComboBox.Location = new System.Drawing.Point(104, 69);
-            this.objectBrigadeIdComboBox.Name = "objectBrigadeIdComboBox";
-            this.objectBrigadeIdComboBox.Size = new System.Drawing.Size(167, 21);
-            this.objectBrigadeIdComboBox.TabIndex = 6;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(10, 17);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 20);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Название";
-            // 
-            // addObjectButton
-            // 
-            this.addObjectButton.Location = new System.Drawing.Point(58, 123);
-            this.addObjectButton.Name = "addObjectButton";
-            this.addObjectButton.Size = new System.Drawing.Size(171, 40);
-            this.addObjectButton.TabIndex = 1;
-            this.addObjectButton.Text = "Добавить";
-            this.addObjectButton.UseVisualStyleBackColor = true;
-            this.addObjectButton.Click += new System.EventHandler(this.addObjectButton_Click);
-            // 
-            // objectNameTextBox
-            // 
-            this.objectNameTextBox.Location = new System.Drawing.Point(104, 17);
-            this.objectNameTextBox.Name = "objectNameTextBox";
-            this.objectNameTextBox.Size = new System.Drawing.Size(167, 20);
-            this.objectNameTextBox.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 43);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(57, 20);
-            this.label14.TabIndex = 5;
-            this.label14.Text = "Адрес";
-            // 
-            // objectStartDateTimePicker
-            // 
-            this.objectStartDateTimePicker.Location = new System.Drawing.Point(82, 96);
-            this.objectStartDateTimePicker.Name = "objectStartDateTimePicker";
-            this.objectStartDateTimePicker.Size = new System.Drawing.Size(60, 20);
-            this.objectStartDateTimePicker.TabIndex = 10;
-            // 
-            // objectEndDateTimePicker
-            // 
-            this.objectEndDateTimePicker.Location = new System.Drawing.Point(209, 96);
-            this.objectEndDateTimePicker.Name = "objectEndDateTimePicker";
-            this.objectEndDateTimePicker.Size = new System.Drawing.Size(62, 20);
-            this.objectEndDateTimePicker.TabIndex = 11;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(19, 96);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 20);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Старт";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(148, 96);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(55, 20);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Конец";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel10.Controls.Add(this.deleteObjectButton);
-            this.panel10.Controls.Add(this.objectNameComboBox);
-            this.panel10.Controls.Add(this.updateObjectButton);
-            this.panel10.Location = new System.Drawing.Point(467, 230);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(298, 167);
-            this.panel10.TabIndex = 10;
-            // 
-            // deleteObjectButton
-            // 
-            this.deleteObjectButton.Location = new System.Drawing.Point(63, 123);
-            this.deleteObjectButton.Name = "deleteObjectButton";
-            this.deleteObjectButton.Size = new System.Drawing.Size(171, 40);
-            this.deleteObjectButton.TabIndex = 5;
-            this.deleteObjectButton.Text = "Удалить";
-            this.deleteObjectButton.UseVisualStyleBackColor = true;
-            this.deleteObjectButton.Click += new System.EventHandler(this.deleteObjectButton_Click);
-            // 
-            // objectNameComboBox
-            // 
-            this.objectNameComboBox.FormattingEnabled = true;
-            this.objectNameComboBox.Location = new System.Drawing.Point(63, 19);
-            this.objectNameComboBox.Name = "objectNameComboBox";
-            this.objectNameComboBox.Size = new System.Drawing.Size(171, 21);
-            this.objectNameComboBox.TabIndex = 4;
-            // 
-            // updateObjectButton
-            // 
-            this.updateObjectButton.Location = new System.Drawing.Point(63, 77);
-            this.updateObjectButton.Name = "updateObjectButton";
-            this.updateObjectButton.Size = new System.Drawing.Size(171, 40);
-            this.updateObjectButton.TabIndex = 1;
-            this.updateObjectButton.Text = "Изменить";
-            this.updateObjectButton.UseVisualStyleBackColor = true;
-            this.updateObjectButton.Click += new System.EventHandler(this.updateObjectButton_Click);
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel11.Controls.Add(this.comboBox3);
-            this.panel11.Controls.Add(this.comboBox2);
-            this.panel11.Controls.Add(this.label16);
-            this.panel11.Controls.Add(this.label17);
-            this.panel11.Controls.Add(this.dateTimePicker2);
-            this.panel11.Controls.Add(this.label18);
-            this.panel11.Controls.Add(this.comboBox1);
-            this.panel11.Controls.Add(this.label19);
-            this.panel11.Controls.Add(this.button1);
-            this.panel11.Controls.Add(this.textBox2);
-            this.panel11.Controls.Add(this.label20);
-            this.panel11.Location = new System.Drawing.Point(3, 230);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(296, 167);
-            this.panel11.TabIndex = 10;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(130, 96);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 20);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Сумма";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(10, 96);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(48, 20);
-            this.label17.TabIndex = 12;
-            this.label17.Text = "Дата";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(64, 96);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(60, 20);
-            this.dateTimePicker2.TabIndex = 10;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(10, 69);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(86, 20);
-            this.label18.TabIndex = 9;
-            this.label18.Text = "Продавец";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(104, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(167, 21);
-            this.comboBox1.TabIndex = 6;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(10, 17);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(67, 20);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "Объект";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(58, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(194, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(97, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(10, 37);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(100, 20);
-            this.label20.TabIndex = 5;
-            this.label20.Text = "Покупатель";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(104, 42);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(167, 21);
-            this.comboBox2.TabIndex = 14;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(104, 16);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(167, 21);
-            this.comboBox3.TabIndex = 15;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel12.Controls.Add(this.button2);
-            this.panel12.Controls.Add(this.comboBox4);
-            this.panel12.Controls.Add(this.button3);
-            this.panel12.Location = new System.Drawing.Point(467, 230);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(298, 167);
-            this.panel12.TabIndex = 11;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(63, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 40);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Удалить";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(63, 19);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(171, 21);
-            this.comboBox4.TabIndex = 4;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(63, 77);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 40);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Изменить";
-            this.button3.UseVisualStyleBackColor = true;
+            // mainDataGridView
+            // 
+            this.mainDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.mainDataGridView.Location = new System.Drawing.Point(0, 70);
+            this.mainDataGridView.Name = "mainDataGridView";
+            this.mainDataGridView.Size = new System.Drawing.Size(765, 172);
+            this.mainDataGridView.TabIndex = 0;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(166, 159);
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(65, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(438, 20);
-            this.label21.TabIndex = 16;
-            this.label21.Text = "Обновить имена у ComboBox TextBox + сделать главную";
+            this.label21.Size = new System.Drawing.Size(108, 31);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "Объект";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(47, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(163, 31);
+            this.label22.TabIndex = 2;
+            this.label22.Text = "Покупатель";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(306, 12);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(152, 39);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Договор";
+            // 
+            // panel13
+            // 
+            this.panel13.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel13.Controls.Add(this.button1);
+            this.panel13.Controls.Add(this.comboBox1);
+            this.panel13.Controls.Add(this.label21);
+            this.panel13.Location = new System.Drawing.Point(3, 245);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(251, 152);
+            this.panel13.TabIndex = 4;
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel14.Controls.Add(this.label22);
+            this.panel14.Location = new System.Drawing.Point(260, 245);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(251, 152);
+            this.panel14.TabIndex = 5;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel15.Controls.Add(this.label24);
+            this.panel15.Location = new System.Drawing.Point(517, 245);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(248, 152);
+            this.panel15.TabIndex = 6;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(47, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(163, 31);
+            this.label24.TabIndex = 2;
+            this.label24.Text = "Покупатель";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(62, 34);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::BuildingCompany.Properties.Resources.search_gray;
+            this.button1.Location = new System.Drawing.Point(189, 33);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 24);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1086,8 +1191,12 @@ namespace BuildingCompany
             this.Name = "Form1";
             this.Text = "Строительная Компания";
             this.tabControl1.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
             this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridContract)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -1095,8 +1204,12 @@ namespace BuildingCompany
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridCustomer)).EndInit();
             this.tabPage3.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridObject)).EndInit();
             this.tabPage4.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEmployee)).EndInit();
@@ -1110,13 +1223,13 @@ namespace BuildingCompany
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPosition)).EndInit();
-            this.panel8.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).EndInit();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1200,22 +1313,31 @@ namespace BuildingCompany
         private System.Windows.Forms.ComboBox objectNameComboBox;
         private System.Windows.Forms.Button updateObjectButton;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button deleteContractButton;
+        private System.Windows.Forms.ComboBox contractNameComboBox;
+        private System.Windows.Forms.Button changeContractButton;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox contractObjectComboBox;
+        private System.Windows.Forms.ComboBox contractCustomerComboBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker contractDateTimePicker;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox contractSellerComboBox;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button addContractButton;
+        private System.Windows.Forms.TextBox contractAmountTextBox;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.DataGridView mainDataGridView;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

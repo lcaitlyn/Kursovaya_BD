@@ -38,6 +38,10 @@ namespace BuildingCompany
         public void showTables()
         {
             showTable(CONTRACT, dataGridContract);
+            showComboBox(OBJECT, contractObjectComboBox);
+            showComboBox(CUSTOMER, contractCustomerComboBox);
+            showComboBox(EMPLOYEE, contractSellerComboBox, "name", "id", $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Менеджер по продажам'")}");
+            showComboBox(CONTRACT, contractNameComboBox);
             
             showTable(CUSTOMER, dataGridCustomer);
             showComboBox(CUSTOMER, customerComboBox);
@@ -57,6 +61,8 @@ namespace BuildingCompany
             
             showTable(POSITION, dataGridPosition);
             showComboBox(POSITION, positionComboBox);
+
+            showMainTable();
         }
 
         // Отобразить таблицу
@@ -64,9 +70,21 @@ namespace BuildingCompany
         {
             var dataAdapter = dBC.executeAdapterQuery($"SELECT * FROM {table}");
 
-            DataSet dataSet = new DataSet();
-            dataAdapter.Fill(dataSet);
-            dataGridView.DataSource = dataSet.Tables[0];
+            u.showDataGrid(dataGridView, dataAdapter);
+        }
+
+        // Отобразить главную таблицу 
+
+        public void showMainTable()
+        {
+            var dataAdapter = dBC.executeAdapterQuery("SELECT contract.id AS 'Договор №', object.name AS 'Название'," +
+                "object.address AS 'Адрес', customer.name AS 'Покупатель', customer.phone AS 'Телефон покупателя', " +
+                "price AS 'Сумма сделки', contract.date AS 'Дата сделки'" +
+                "FROM company.contract " +
+                "INNER JOIN company.object on objectId = object.id " +
+                "INNER JOIN company.customer on customerId = customer.id;");
+
+            u.showDataGrid(mainDataGridView, dataAdapter);
         }
 
         // Отображение ComboBox
@@ -259,6 +277,54 @@ namespace BuildingCompany
             if (u.checkTextForNull(objectNameComboBox)) return;
 
             dBC.deleteFromTable(OBJECT, u.createWhere(objectNameComboBox));
+        }
+
+        private void addContractButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(contractObjectComboBox) || u.checkTextForNull(contractCustomerComboBox)
+                || u.checkTextForNull(contractSellerComboBox) || u.checkTextForNull(contractAmountTextBox)) return;
+
+
+            String column = "date, price";
+            String value = $"{u.wISQ(contractDateTimePicker.Value.ToString("yyyy-MM-dd"))}, {u.wISQ(contractAmountTextBox.Text.Trim(' '))}";
+
+            var tmp = u.getStringForSet(contractObjectComboBox, OBJECT, null, "Такого Объекта не существует");
+            column += (tmp != null) ? ", objectId" : null;
+            value += tmp;
+
+            tmp = u.getStringForSet(contractCustomerComboBox, CUSTOMER, null, "Такого Покупателя не существует");
+            column += (tmp != null) ? ", customerId" : null;
+            value += tmp;
+
+            tmp = u.getStringForSet(contractSellerComboBox, EMPLOYEE, null, "Такого Продавца не существует");
+            column += (tmp != null) ? ", salesmanId" : null;
+            value += tmp;
+
+            dBC.addToTable(CONTRACT, column, value);
+        }
+
+        private void changeContractButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(contractObjectComboBox) || u.checkTextForNull(contractCustomerComboBox)
+                || u.checkTextForNull(contractSellerComboBox) || u.checkTextForNull(contractAmountTextBox)
+                || !u.checkForParseText(contractAmountTextBox.Text)) return;
+
+
+            String set = $"date={u.wISQ(contractDateTimePicker.Value.ToString("yyyy-MM-dd"))}";
+            set += $", price={uint.Parse(contractAmountTextBox.Text)}";
+
+            set += u.getStringForSet(contractObjectComboBox, OBJECT, "objectId=", "Такого Объекта не существует");
+            set += u.getStringForSet(contractCustomerComboBox, CUSTOMER, "customerId=", "Такого Покупателя не существует");
+            set += u.getStringForSet(contractSellerComboBox, EMPLOYEE, "salesmanId=", "Такого Продавца не существует");
+
+            dBC.updateTable(CONTRACT, set, u.createWhere(contractNameComboBox));
+        }
+
+        private void deleteContractButton_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(contractNameComboBox)) return;
+
+            dBC.deleteFromTable(CONTRACT, u.createWhere(contractNameComboBox));
         }
     }
 }
