@@ -14,13 +14,12 @@ namespace BuildingCompany
         private MySqlConnection mySqlConnection;
         private Utils u = new Utils();
 
-        public MyDBC(Form1 form1)
+        private void constructor()
         {
             try
             {
                 mySqlConnection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=company");
                 mySqlConnection.Open();
-                this.form1 = form1;
             }
             catch (MySqlException e)
             {
@@ -28,6 +27,18 @@ namespace BuildingCompany
                 Environment.Exit(1);
             }
         }
+        public MyDBC()
+        {
+            constructor();
+        }
+
+        public MyDBC(Form1 form1)
+        {
+            constructor();
+            this.form1 = form1;
+        }
+
+
 
         public string executeQuery(string query, bool updateTable = true)
         {

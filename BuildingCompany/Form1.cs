@@ -37,10 +37,15 @@ namespace BuildingCompany
         // Отобразить все таблицы
         public void showTables()
         {
+            showMainTable();
+            showComboBox(OBJECT, mainObjectNameComboBox);
+            showComboBox(CUSTOMER, mainCustomerNameComboBox);
+
             showTable(CONTRACT, dataGridContract);
             showComboBox(OBJECT, contractObjectComboBox);
             showComboBox(CUSTOMER, contractCustomerComboBox);
-            showComboBox(EMPLOYEE, contractSellerComboBox, "name", "id", $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Менеджер по продажам'")}");
+            showComboBox(EMPLOYEE, contractSellerComboBox, "name", "id",
+                $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Менеджер по продажам'")}");
             showComboBox(CONTRACT, contractNameComboBox);
             
             showTable(CUSTOMER, dataGridCustomer);
@@ -57,12 +62,11 @@ namespace BuildingCompany
 
             showTable(BRIGADE, dataGridBrigade);
             showComboBox(BRIGADE, bridageComboBox);
-            showComboBox(EMPLOYEE, foremanNameComboBox, "name", "id", $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Бригадир'")}");
+            showComboBox(EMPLOYEE, foremanNameComboBox, "name", "id",
+                $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Бригадир'")}");
             
             showTable(POSITION, dataGridPosition);
             showComboBox(POSITION, positionComboBox);
-
-            showMainTable();
         }
 
         // Отобразить таблицу
@@ -74,7 +78,6 @@ namespace BuildingCompany
         }
 
         // Отобразить главную таблицу 
-
         public void showMainTable()
         {
             var dataAdapter = dBC.executeAdapterQuery("SELECT contract.id AS 'Договор №', object.name AS 'Название'," +
@@ -310,8 +313,8 @@ namespace BuildingCompany
                 || !u.checkForParseText(contractAmountTextBox.Text)) return;
 
 
-            String set = $"date={u.wISQ(contractDateTimePicker.Value.ToString("yyyy-MM-dd"))}";
-            set += $", price={uint.Parse(contractAmountTextBox.Text)}";
+            String set = $"date={u.wISQ(contractDateTimePicker.Value.ToString("yyyy-MM-dd"))}, "
+                + "price={uint.Parse(contractAmountTextBox.Text)}";
 
             set += u.getStringForSet(contractObjectComboBox, OBJECT, "objectId=", "Такого Объекта не существует");
             set += u.getStringForSet(contractCustomerComboBox, CUSTOMER, "customerId=", "Такого Покупателя не существует");
@@ -325,6 +328,49 @@ namespace BuildingCompany
             if (u.checkTextForNull(contractNameComboBox)) return;
 
             dBC.deleteFromTable(CONTRACT, u.createWhere(contractNameComboBox));
+        }
+
+        private void mainObjectNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!mainObjectNameComboBox.SelectedValue.ToString().Equals("System.Data.DataRowView"))
+            {
+                mainObjectNameTextBox.Text = dBC.selectFromTable("name", OBJECT, $"id = {mainObjectNameComboBox.SelectedValue}");
+                mainObjectAddressTextBox.Text = dBC.selectFromTable("address", OBJECT, $"id = {mainObjectNameComboBox.SelectedValue}");
+            }
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(mainObjectNameComboBox)) return;
+
+            mainObjectNameTextBox.Text = dBC.selectFromTable("name", OBJECT, $"name = {u.wISQ(mainObjectNameComboBox.Text)}");
+            mainObjectAddressTextBox.Text = dBC.selectFromTable("address", OBJECT, $"name = {u.wISQ(mainObjectNameComboBox.Text)}");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!mainCustomerNameComboBox.SelectedValue.ToString().Equals("System.Data.DataRowView"))
+            {
+                mainCustomerNameTextBox.Text = dBC.selectFromTable("name", CUSTOMER, $"id = {mainCustomerNameComboBox.SelectedValue}");
+                mainCustomerPhoneTextBox.Text = dBC.selectFromTable("phone", CUSTOMER, $"id = {mainCustomerNameComboBox.SelectedValue}");
+                mainCutomerEmailTextBox.Text = dBC.selectFromTable("email", CUSTOMER, $"id = {mainCustomerNameComboBox.SelectedValue}");
+            }
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(mainCustomerNameComboBox)) return;
+
+            mainCustomerNameTextBox.Text = dBC.selectFromTable("name", CUSTOMER, $"name = {u.wISQ(mainCustomerNameComboBox.Text)}");
+            mainCustomerPhoneTextBox.Text = dBC.selectFromTable("phone", CUSTOMER, $"name = {u.wISQ(mainCustomerNameComboBox.Text)}");
+            mainCutomerEmailTextBox.Text = dBC.selectFromTable("email", CUSTOMER, $"name = {u.wISQ(mainCustomerNameComboBox.Text)}");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Customer customer = new Customer(this);
+
+            customer.Show();
         }
     }
 }

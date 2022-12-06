@@ -42,3 +42,4 @@ C:\Users\pc\Desktop\Kursovaya_BD\BuildingCompany\obj\Debug\BuildingCompany.cspro
 C:\Users\pc\Desktop\Kursovaya_BD\BuildingCompany\obj\Debug\BuildingCompany.csproj.CopyComplete
 C:\Users\pc\Desktop\Kursovaya_BD\BuildingCompany\obj\Debug\BuildingCompany.exe
 C:\Users\pc\Desktop\Kursovaya_BD\BuildingCompany\obj\Debug\BuildingCompany.pdb
+C:\Users\pc\Desktop\Kursovaya_BD\BuildingCompany\obj\Debug\BuildingCompany.Customer.resources

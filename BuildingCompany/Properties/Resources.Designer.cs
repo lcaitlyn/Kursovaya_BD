@@ -63,10 +63,9 @@ namespace BuildingCompany.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap png_transparent_computer_icons_magnifying_glass_symbol_search_logo_magnifier_zooming_user_interface {
+        internal static System.Drawing.Bitmap _748137 {
             get {
-                object obj = ResourceManager.GetObject("png-transparent-computer-icons-magnifying-glass-symbol-search-logo-magnifier-zoom" +
-                        "ing-user-interface", resourceCulture);
+                object obj = ResourceManager.GetObject("748137", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
