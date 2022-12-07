@@ -286,6 +286,7 @@ namespace BuildingCompany
         {
             if (u.checkTextForNull(contractObjectComboBox) || u.checkTextForNull(contractCustomerComboBox)
                 || u.checkTextForNull(contractSellerComboBox) || u.checkTextForNull(contractAmountTextBox)) return;
+            if (!u.checkForParseText(contractAmountTextBox.Text)) return;
 
 
             String column = "date, price";
@@ -314,7 +315,7 @@ namespace BuildingCompany
 
 
             String set = $"date={u.wISQ(contractDateTimePicker.Value.ToString("yyyy-MM-dd"))}, "
-                + "price={uint.Parse(contractAmountTextBox.Text)}";
+                + $"price={uint.Parse(contractAmountTextBox.Text)}";
 
             set += u.getStringForSet(contractObjectComboBox, OBJECT, "objectId=", "Такого Объекта не существует");
             set += u.getStringForSet(contractCustomerComboBox, CUSTOMER, "customerId=", "Такого Покупателя не существует");
@@ -371,6 +372,26 @@ namespace BuildingCompany
             Customer customer = new Customer(this);
 
             customer.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (u.checkTextForNull(mainCustomerNameComboBox) || u.checkTextForNull(mainObjectNameComboBox)
+                || u.checkTextForNull(mainPriceTextBox)) return;
+            if (!u.checkForParseText(mainPriceTextBox.Text)) return;
+
+            String column = "date, price";
+            String value = $"{u.wISQ(mainDateTimePicker.Value.ToString("yyyy-MM-dd"))}, {u.wISQ(mainPriceTextBox.Text.Trim(' '))}";
+
+            var tmp = u.getStringForSet(mainObjectNameComboBox, OBJECT, null, "Такого Объекта не существует");
+            column += (tmp != null) ? ", objectId" : null;
+            value += tmp;
+
+            tmp = u.getStringForSet(mainCustomerNameComboBox, CUSTOMER, null, "Такого Покупателя не существует");
+            column += (tmp != null) ? ", customerId" : null;
+            value += tmp;
+
+            dBC.addToTable(CONTRACT, column, value);
         }
     }
 }

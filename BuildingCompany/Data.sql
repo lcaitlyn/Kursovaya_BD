@@ -90,13 +90,25 @@ insert into company.customer (name, phone, email)
     value ('Котов Иван Русланович', '+7(495)485-95-35', 'ivan_pussy@gmail.com');
 insert into company.customer (name, phone, email)
     value ('Михайлов Борис Артурович', '+7(495)224-71-39', 'boris_the_blade@yandex.ru');
+insert into company.customer (name, phone, email)
+    value ('Сергеев Сергей Леонович', '+7(495)120-51-63', 'sergey_krutoi228@rambler.ru');
+insert into company.customer (name, phone, email)
+    value ('Кондратьев Александр Егорович', '+7(495)485-93-49', 'sanyek322_pro@mail.com');
+insert into company.customer (name, phone, email)
+    value ('Уразов Разиль Владиславович', '+7(495)622-12-56', 'prostorazil@gmail.ru');
 
 insert into company.object (name, address, startDate, endDate, brigadeId)
-    value ('Коттедж', 'Кооперативная ул., 29, Казань, Респ. Татарстан, 420101', '2005-12-25', '2015-5-13', 1);
+    value ('Коттедж', 'Казань, Кооперативная ул., 29', '2005-12-25', '2015-5-13', 1);
 insert into company.object (name, address, startDate, endDate, brigadeId)
-    value ('Летний домик', 'ул. Героев Хасана, 23, Казань, Респ. Татарстан, 420101', '2016-6-10', '2020-2-17', 2);
+    value ('Летний домик', 'Казань, ул. Героев Хасана, 23', '2016-6-10', '2020-2-17', 2);
 insert into company.object (name, address, startDate, endDate, brigadeId)
-    value ('Вилла', 'ул. Матур, 4, Казань, Респ. Татарстан, 420138', '2013-9-1', '2018-8-19', 3);
+    value ('Вилла', 'Казань, ул. Матур, 4', '2013-9-1', '2018-8-19', 3);
+insert into company.object (name, address, startDate, endDate, brigadeId)
+    value ('Сруб', 'Казань, ул. Железнодорожная, 29', '2015-11-25', '2016-5-13', 3);
+insert into company.object (name, address, startDate, endDate, brigadeId)
+    value ('Кирпичный дом', 'Казань, ул. Заводская, 6', '2012-8-10', '2014-2-11', 1);
+insert into company.object (name, address, startDate, endDate, brigadeId)
+    value ('Баня', 'Казань, ул. Физкультурная, 14', '2018-1-11', '2021-8-15', 2);
 
 insert into company.contract (objectId, customerId, salesmanId, date, price)
     value (1, 1, 4, '2013-6-15', 5500000);
@@ -104,3 +116,9 @@ insert into company.contract (objectId, customerId, salesmanId, date, price)
     value (2, 2, 4, '2020-3-3', 6400000);
 insert into company.contract (objectId, customerId, salesmanId, date, price)
     value (3, 3, 4, '2018-9-1', 7900000);
+insert into company.contract (objectId, customerId, salesmanId, date, price)
+    value (4, 4, 4, '2016-5-25', 5100000);
+insert into company.contract (objectId, customerId, salesmanId, date, price)
+    value (5, 5, 4, '2014-3-1', 3400000);
+insert into company.contract (objectId, customerId, salesmanId, date, price)
+    value (6, 6, 4, '2021-9-1', 320000);

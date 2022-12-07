@@ -33,6 +33,11 @@ namespace BuildingCompany
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.mainPriceTextBox = new System.Windows.Forms.TextBox();
+            this.mainDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel14 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.mainCutomerEmailTextBox = new System.Windows.Forms.Label();
@@ -147,6 +152,7 @@ namespace BuildingCompany
             this.dataGridPosition = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel14.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainDataGridView)).BeginInit();
@@ -208,10 +214,59 @@ namespace BuildingCompany
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel15.Controls.Add(this.button4);
+            this.panel15.Controls.Add(this.label28);
+            this.panel15.Controls.Add(this.label24);
+            this.panel15.Controls.Add(this.mainPriceTextBox);
+            this.panel15.Controls.Add(this.mainDateTimePicker);
             this.panel15.Location = new System.Drawing.Point(621, 245);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(144, 152);
             this.panel15.TabIndex = 6;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(4, 115);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(137, 32);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "Заключить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(52, 58);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(44, 16);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Цена:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(52, 13);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(43, 16);
+            this.label24.TabIndex = 19;
+            this.label24.Text = "Дата:";
+            // 
+            // mainPriceTextBox
+            // 
+            this.mainPriceTextBox.Location = new System.Drawing.Point(4, 77);
+            this.mainPriceTextBox.Name = "mainPriceTextBox";
+            this.mainPriceTextBox.Size = new System.Drawing.Size(137, 20);
+            this.mainPriceTextBox.TabIndex = 1;
+            // 
+            // mainDateTimePicker
+            // 
+            this.mainDateTimePicker.Location = new System.Drawing.Point(3, 35);
+            this.mainDateTimePicker.Name = "mainDateTimePicker";
+            this.mainDateTimePicker.Size = new System.Drawing.Size(138, 20);
+            this.mainDateTimePicker.TabIndex = 0;
             // 
             // panel14
             // 
@@ -1343,6 +1398,8 @@ namespace BuildingCompany
             this.tabControl1.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             this.panel13.ResumeLayout(false);
@@ -1499,6 +1556,11 @@ namespace BuildingCompany
         private System.Windows.Forms.Label mainCustomerPhoneTextBox;
         private System.Windows.Forms.Label mainCustomerNameTextBox;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox mainPriceTextBox;
+        private System.Windows.Forms.DateTimePicker mainDateTimePicker;
     }
 }
 
