@@ -1,11 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BuildingCompany
@@ -52,6 +47,7 @@ namespace BuildingCompany
             return String.IsNullOrEmpty(comboBox.Text.Trim(' '));
         }
 
+        // Проверяет строку на null
         public bool checkTextForNull(string what, string errorMessage)
         {
             if (what == null)
@@ -75,12 +71,13 @@ namespace BuildingCompany
             }
         }
 
-        // Вывести ошибку
+        // Функция выводит ошибку
         public void showError(String message)
         {
             MessageBox.Show(message, "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        // Функция которая формирует строку для UPDATE TABLE
         public string getStringForSet(ComboBox comboBox, string table, string set, string errorMessage)
         {
             string id = null;
@@ -93,6 +90,7 @@ namespace BuildingCompany
             return (id != null) ? $", {set}{id}" : null;
         }
 
+        // Функция показывается DataGrid
         public void showDataGrid(DataGridView dataGridView, MySqlDataAdapter dataAdapter)
         {
             DataSet dataSet = new DataSet();

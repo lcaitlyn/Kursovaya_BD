@@ -1,10 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace BuildingCompany
 {
@@ -14,6 +9,7 @@ namespace BuildingCompany
         private MySqlConnection mySqlConnection;
         private Utils u = new Utils();
 
+        // Конструктор, который открывает соединение
         private void constructor()
         {
             try
@@ -38,8 +34,7 @@ namespace BuildingCompany
             this.form1 = form1;
         }
 
-
-
+        // Выполняет Query запрос
         public string executeQuery(string query, bool updateTable = true)
         {
             object result = null;
@@ -59,6 +54,7 @@ namespace BuildingCompany
             return (result != null) ? result.ToString() : null;
         }
 
+        // Выполняет Query запрос и возвращает SqlDataAdapter
         public MySqlDataAdapter executeAdapterQuery(string query)
         {
             return new MySqlDataAdapter(query, mySqlConnection);
@@ -82,6 +78,7 @@ namespace BuildingCompany
             executeQuery($"UPDATE {table} SET {set} WHERE {where}");
         }
 
+        // Выбрать значение из таблицы
         public string selectFromTable(string column, string table, string where)
         {
             return executeQuery($"SELECT {column} FROM {table} WHERE {where}", false);

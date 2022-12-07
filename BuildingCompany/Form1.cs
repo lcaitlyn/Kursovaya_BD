@@ -1,13 +1,5 @@
-﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BuildingCompany
@@ -34,37 +26,37 @@ namespace BuildingCompany
             showTables();
         }
 
-        // Отобразить все таблицы
+        // Отобразить все таблицы (DataGrid)
         public void showTables()
-        {
+        {   // главная
             showMainTable();
             showComboBox(OBJECT, mainObjectNameComboBox);
             showComboBox(CUSTOMER, mainCustomerNameComboBox);
-
+            // Договора
             showTable(CONTRACT, dataGridContract);
             showComboBox(OBJECT, contractObjectComboBox);
             showComboBox(CUSTOMER, contractCustomerComboBox);
             showComboBox(EMPLOYEE, contractSellerComboBox, "name", "id",
                 $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Менеджер по продажам'")}");
             showComboBox(CONTRACT, contractNameComboBox);
-            
+            // Заказчики
             showTable(CUSTOMER, dataGridCustomer);
             showComboBox(CUSTOMER, customerComboBox);
-            
+            // Объекты
             showTable(OBJECT, dataGridObject);
             showComboBox(BRIGADE, objectBrigadeIdComboBox);
             showComboBox(OBJECT, objectNameComboBox);
-            
+            // Работники
             showTable(EMPLOYEE, dataGridEmployee);
             showComboBox(EMPLOYEE, employeeNameComboBox);
             showComboBox(BRIGADE, employeeBridageIdComboBox);
             showComboBox(POSITION, employeePositionIdComboBox);
-
+            // Бригады
             showTable(BRIGADE, dataGridBrigade);
             showComboBox(BRIGADE, bridageComboBox);
             showComboBox(EMPLOYEE, foremanNameComboBox, "name", "id",
                 $"WHERE positionId={dBC.selectFromTable("id", POSITION, "name='Бригадир'")}");
-            
+            // Должности
             showTable(POSITION, dataGridPosition);
             showComboBox(POSITION, positionComboBox);
         }
@@ -261,7 +253,7 @@ namespace BuildingCompany
             dBC.addToTable(OBJECT, column, value);
         }
 
-        // Изменение объекта
+        // Изменение Объекта
         private void updateObjectButton_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(objectNameTextBox) || u.checkTextForNull(objectAddressTextBox)) return;
@@ -275,6 +267,7 @@ namespace BuildingCompany
             dBC.updateTable(OBJECT, set, u.createWhere(objectNameComboBox));
         }
 
+        // Кнопка удаления Объекта
         private void deleteObjectButton_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(objectNameComboBox)) return;
@@ -282,6 +275,7 @@ namespace BuildingCompany
             dBC.deleteFromTable(OBJECT, u.createWhere(objectNameComboBox));
         }
 
+        // Кнопка добавления Контракта
         private void addContractButton_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(contractObjectComboBox) || u.checkTextForNull(contractCustomerComboBox)
@@ -307,6 +301,7 @@ namespace BuildingCompany
             dBC.addToTable(CONTRACT, column, value);
         }
 
+        // Кнопка изменения Контракта
         private void changeContractButton_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(contractObjectComboBox) || u.checkTextForNull(contractCustomerComboBox)
@@ -324,6 +319,7 @@ namespace BuildingCompany
             dBC.updateTable(CONTRACT, set, u.createWhere(contractNameComboBox));
         }
 
+        // Кнопка удаления Контракта
         private void deleteContractButton_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(contractNameComboBox)) return;
@@ -331,6 +327,7 @@ namespace BuildingCompany
             dBC.deleteFromTable(CONTRACT, u.createWhere(contractNameComboBox));
         }
 
+        // Кнопка отображает Название и Адрес Объекта
         private void mainObjectNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!mainObjectNameComboBox.SelectedValue.ToString().Equals("System.Data.DataRowView"))
@@ -340,6 +337,7 @@ namespace BuildingCompany
             }
         }
 
+        // Кнопка изменения объекта
         private void button1_Click_2(object sender, EventArgs e)
         {
             if (u.checkTextForNull(mainObjectNameComboBox)) return;
@@ -348,6 +346,7 @@ namespace BuildingCompany
             mainObjectAddressTextBox.Text = dBC.selectFromTable("address", OBJECT, $"name = {u.wISQ(mainObjectNameComboBox.Text)}");
         }
 
+        // Кнопка отображает ФИО, Номер и Почтовый адрес покупателя
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!mainCustomerNameComboBox.SelectedValue.ToString().Equals("System.Data.DataRowView"))
@@ -358,6 +357,7 @@ namespace BuildingCompany
             }
         }
 
+        // Кнопка изменения Покупателя
         private void button2_Click_2(object sender, EventArgs e)
         {
             if (u.checkTextForNull(mainCustomerNameComboBox)) return;
@@ -367,6 +367,7 @@ namespace BuildingCompany
             mainCutomerEmailTextBox.Text = dBC.selectFromTable("email", CUSTOMER, $"name = {u.wISQ(mainCustomerNameComboBox.Text)}");
         }
 
+        // Кнопка вызывается форму добовления покупателя
         private void button3_Click(object sender, EventArgs e)
         {
             Customer customer = new Customer(this);
@@ -374,6 +375,7 @@ namespace BuildingCompany
             customer.Show();
         }
 
+        // Кнопка добаляет нового Покупателя
         private void button4_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(mainCustomerNameComboBox) || u.checkTextForNull(mainObjectNameComboBox)
