@@ -23,6 +23,7 @@ namespace BuildingCompany
                 Environment.Exit(1);
             }
         }
+
         public MyDBC()
         {
             constructor();
@@ -83,7 +84,6 @@ namespace BuildingCompany
         {
             return executeQuery($"SELECT {column} FROM {table} WHERE {where}", false);
         }
-
 
         ~MyDBC()
         {

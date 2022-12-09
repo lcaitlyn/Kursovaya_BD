@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BuildingCompany
@@ -17,6 +10,7 @@ namespace BuildingCompany
         private const String CUSTOMER = "company.customer";
         private Form1 form1;
 
+        // Конструктор
         public Customer(Form1 form1)
         {
             InitializeComponent();
@@ -25,6 +19,7 @@ namespace BuildingCompany
             u = new Utils(dBC);
         }
 
+        // Кнопка добавления пользователя
         private void addCustomer_Click(object sender, EventArgs e)
         {
             if (u.checkTextForNull(customersNameTextBox) || u.checkTextForNull(customersPhoneTextBox) || u.checkTextForNull(customersEmailTextBox)) return;

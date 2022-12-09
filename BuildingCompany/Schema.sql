@@ -37,11 +37,11 @@ create table if not exists company.object (
     brigadeId int references company.brigade(id)
 );
 
-create table if not exists company.contract (
-    id serial primary key ,
-    objectId int references object(id),
-    customerId int references company.customer(id),
-    salesmanId int references company.employee(id),
-    date date not null ,
-    price int not null default 0
-);
+        create table if not exists company.contract (
+            id serial primary key ,
+            objectId int references object(id),
+            customerId int references company.customer(id),
+            salesmanId int references company.employee(id),
+            date date not null ,
+            price int not null default 0
+        );
